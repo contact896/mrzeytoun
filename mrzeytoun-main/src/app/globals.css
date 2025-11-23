@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #403c3b;
+  --font-outfit: var(--font-outfit);
+  --font-varsity: var(--varsity-team);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-[24px] sm:text-[32px] md:text-[48px] lg:text-[64px] xl:text-[72px] font-bold leading-tight;
+  }
+  h2 {
+    @apply text-[36px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold leading-snug;
+  }
+  h3 {
+    @apply text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-semibold;
+  }
+  h4 {
+    @apply text-[20px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[32px] font-medium;
+  }
+  h5 {
+    @apply text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] font-medium;
+  }
+  h6 {
+    @apply text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] font-medium;
+  }
+  p {
+    @apply text-[14px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-medium;
+  }
+
+  a,
+  div,
+  span,
+  p,
+  ul,
+  ol,
+  select,
+  option {
+    @apply font-outfit;
+  }
+}
+
+@layer components {
+  .custom-container {
+    @apply max-w-[1600px] mx-auto lg:px-20 md:px-10 px-5;
+  }
+
+  .duble-border {
+    border: 6px solid black; /* inner border */
+    box-shadow: 0 0 0 1px rgb(255, 255, 255); /* outer border */
+  }
+}
+
+@layer utilities {
+  .masked-text {
+    color: transparent;
+    background-image: url("/images/hero-background-layer.png");
+    background-size: 200%; /* Enlarged for smooth animation */
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear;
+    background-color: #171717;
+  }
+
+  @keyframes animate-background {
+    0% {
+      background-position: 0 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .hero-dark-right-bg {
+    @apply right-0 md:-right-20 lg:right-0 min-[1280px]:-right-40! 2xl:-right-36;
+  }
+}
+
+@layer theme {
+  /* add media qurey  */
+  
+}
+
+.heroImage {
+  @apply relative;
+}
+
+.heroImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  background-color: rgb(71, 11, 11);
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  z-index: 10;
+}

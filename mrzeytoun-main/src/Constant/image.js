@@ -1,0 +1,16 @@
+export const HERO_BACKGROUND_LAYER = "/images/hero-background-layer.png";
+export const HERO_BACKGROUND = "/images/hero-banner-background.png";
+export const HERO_SECTION_IMAGE = "/images/hero-section.png";
+export const LOGO = "/images/logo.png";
+export const INSTAGRAM_ICON = "/images/instagram-icon.png";
+export const FACEBOOK_ICON = "/images/facebook-icon.png";
+export const X_ICON = "/images/x-icon.png";
+export const YOUTUBE_ICON = "/images/youtube-icon.png";
+export const TIKTOK_ICON = "/images/tiktok-icon.png";
+export const DETAILS_SECTION_HERO = "/images/details-section-hero.png";
+export const ARROW_SVG = "/SVGs/arrow.svg";
+export const HOW_TO_USE_GUIDE1 = "/images/how-to-use-guide1.png";
+export const HOW_TO_USE_GUIDE2 = "/images/how-to-use-guide2.png";
+export const HOW_TO_USE_GUIDE3 = "/images/how-to-use-guide3.png";
+export const FOOTER_BANNER_IMAGE = "/images/footer-banner-image.png";
+export const FOOTER_BANNER = "/images/footer-banner.png";
