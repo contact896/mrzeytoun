@@ -21,20 +21,17 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "Instagram",
-      href: "https://www.instagram.com",
+      href: "https://www.instagram.com/_zeytouncuts_/",
       icon: INSTAGRAM_ICON,
     },
-    { name: "Facebook", href: "https://www.facebook.com", icon: FACEBOOK_ICON },
-    { name: "X", href: "https://www.x.com", icon: X_ICON },
-    { name: "YouTube", href: "https://www.youtube.com", icon: YOUTUBE_ICON },
-    { name: "TikTok", href: "https://www.tiktok.com", icon: TIKTOK_ICON },
   ];
   const contactDetails = [
-    { type: "Phone", value: "+12 34 56 78 900", icon: "material-symbols:call" },
-    { type: "Web", value: "mrzeytounofficial.com", icon: "mdi:internet" },
+    { type: "email", value: "eliasjarrouje@gmail.com", icon: "mdi:email", link: "mailto:eliasjarrouje@gmail.com" },
+    { type: "Web", value: "mrzeytounofficial.com", icon: "mdi:internet", link: "https://mrzeytounofficial.com" },
     {
       type: "Address",
-      value: "99 Lorem Ipsum. Dolor Sit ",
+      link: "https://maps.app.goo.gl/M5wK89yEFmEzpP7W9",
+      value: "1 Jack Robbie Ct Narre Warren North VIC 3804",
       icon: "material-symbols:location-on",
     },
   ];
@@ -119,16 +116,17 @@ const Footer = () => {
         {/* Contact Details  */}
         <div className="flex flex-col gap-4 lg:items-end justify-center order-2 md:order-3">
           {contactDetails.map((contact) => (
-            <div key={contact.type} className="flex items-center gap-2">
+            <div key={contact.type} className="flex items-center gap-2 self-start">
               <Icon
                 icon={contact.icon}
                 width="20"
                 height="20"
                 className="sm:w-6 sm:h-6"
               />
-              <span className="text-sm sm:text-base break-words">
-                {contact.value}
-              </span>
+              {contact.link ? <Link className="text-sm sm:text-base break-words hover:text-gray-600 transition-colors duration-200" href={contact.link}>{contact.value}</Link> :
+                <span className="text-sm sm:text-base break-words">
+                  {contact.value}
+                </span>}
             </div>
           ))}
         </div>

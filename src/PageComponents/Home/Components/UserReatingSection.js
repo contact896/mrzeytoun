@@ -22,8 +22,8 @@ export default function UserReatingSection() {
       quote: "Strong hold, clean feel.",
       review:
         "Washes out easily and doesn't build up like other clays. The scent is subtle and classy, just how I like it.",
-      author: "TONY FADES",
-      location: "Sydney, AUS",
+      author: "MICHAEL SMITH",
+      location: "Burnaby, CAN",
       rating: 5,
     },
     {
@@ -31,17 +31,17 @@ export default function UserReatingSection() {
       quote: "Texture game on point!",
       review:
         "Gives that effortless, messy look I love without looking overdone.",
-      author: "TONY FADES",
-      location: "Sydney, AUS",
+      author: "MONAH FADES",
+      location: "Los Angeles, USA",
       rating: 5,
     },
     {
       id: 4,
-      quote: "Texture game on point!",
+      quote: "Very soft and lightweight.",
       review:
-        "Gives that effortless, messy look I love without looking overdone.",
-      author: "TONY FADES",
-      location: "Sydney, AUS",
+        "I love the texture and feel of this clay. It's so natural and lightweight, I can't even feel it on my head.",
+      author: "TIM AUSTIN",
+      location: "New York, USA",
       rating: 5,
     },
   ];
