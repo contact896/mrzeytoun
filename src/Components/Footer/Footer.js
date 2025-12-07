@@ -29,10 +29,7 @@ const Footer = () => {
     { type: "email", value: "eliasjarrouje@gmail.com", icon: "mdi:email", link: "mailto:eliasjarrouje@gmail.com" },
     { type: "Web", value: "mrzeytounofficial.com", icon: "mdi:internet", link: "https://mrzeytounofficial.com" },
     {
-      type: "Address",
-      link: "https://maps.app.goo.gl/M5wK89yEFmEzpP7W9",
-      value: "1 Jack Robbie Ct Narre Warren North VIC 3804",
-      icon: "material-symbols:location-on",
+      
     },
   ];
   return (
