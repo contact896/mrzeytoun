@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { HERO_SECTION_IMAGE, HERO_SECTION_IMAGE2 } from "@/Constant/image";
 
 export default function PromiseSection() {
   const backGroundRef = useRef();
@@ -11,15 +12,13 @@ export default function PromiseSection() {
   const [currentHeight, setCurrentHeight] = useState(0);
   const [imageHeight, setImageHeight] = useState(0);
   const [isWide, setIsWide] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [HERO_SECTION_IMAGE, HERO_SECTION_IMAGE2];
 
   useEffect(() => {
     if (backGroundRef.current) {
       setCurrentWidth(backGroundRef.current.offsetWidth);
       setCurrentHeight(backGroundRef.current.offsetHeight);
-      console.log(
-        backGroundRef.current.offsetHeight,
-        backGroundRef.current.offsetWidth
-      );
     }
     if (imageRef.current) {
       setImageHeight(imageRef.current.offsetHeight);
@@ -27,6 +26,13 @@ export default function PromiseSection() {
     if (window.innerWidth > 768) {
       setIsWide(true);
     }
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 4000);
+    return () => clearInterval(id);
   }, []);
 
   const features = [
@@ -156,13 +162,22 @@ export default function PromiseSection() {
                   {/* Product Image */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative w-48 h-48 lg:w-56 lg:h-56">
-                      <Image
-                        ref={imageRef}
-                        src="/images/hero-section.png"
-                        alt="Mr Zeytoun Product"
-                        fill
-                        className="object-contain"
-                      />
+                      {images.map((src, idx) => (
+                        <div
+                          key={src}
+                          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                            idx === currentImageIndex ? "opacity-100" : "opacity-0"
+                          }`}
+                        >
+                          <Image
+                            ref={idx === currentImageIndex ? imageRef : undefined}
+                            src={src}
+                            alt="Mr Zeytoun Product"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

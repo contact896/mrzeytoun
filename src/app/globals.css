@@ -90,6 +90,7 @@ body {
   .hero-dark-right-bg {
     @apply right-0 md:-right-20 lg:right-0 min-[1280px]:-right-40! 2xl:-right-36;
   }
+
 }
 
 @layer theme {
