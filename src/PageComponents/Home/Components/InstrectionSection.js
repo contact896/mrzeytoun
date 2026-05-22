@@ -55,7 +55,7 @@ export default function InstrectionSection() {
     },
     {
       id: 3,
-      icon: HOW_TO_USE_SPRAY_GUIDE3,
+      icon: HOW_TO_USE_GUIDE3,
       title: "Style",
       description:
         "Let it air dry for a natural finish or blow dry for added volume.",
