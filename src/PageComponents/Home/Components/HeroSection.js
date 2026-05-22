@@ -17,6 +17,7 @@ const slides = [
       "Crafted for the modern man who demands strength, style, and authenticity without compromise.",
     badge1: "Non-greasy",
     badge2: "Matte Clay",
+    paymentLink: process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK,
   },
   {
     image: HERO_SECTION_IMAGE2,
@@ -26,6 +27,7 @@ const slides = [
       "Crafted for the modern man who wants movement, definition,and a relaxed, beach-inspired style without heaviness.",
     badge1: "Sea Salt Spray",
     badge2: "Lightweight",
+    paymentLink: process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK2,
   },
 ];
 
@@ -45,8 +47,8 @@ export default function HeroSection() {
     AOS.refresh();
   }, [activeSlide]);
 
-  const handleBuyNowClick = () => {
-    router.push(process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK);
+  const handleBuyNowClick = (paymentLink) => {
+    router.push(paymentLink);
   };
 
   return (
@@ -57,7 +59,9 @@ export default function HeroSection() {
             <div
               key={index}
               className={`col-start-1 row-start-1 w-full flex md:flex-row flex-col transition-opacity duration-700 ease-in-out ${
-                index === activeSlide ? "opacity-100" : "opacity-0 pointer-events-none"
+                index === activeSlide
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
               }`}
             >
               <div className="w-full md:w-6/10 flex flex-col gap-3 order-2 md:order-1">
@@ -92,7 +96,7 @@ export default function HeroSection() {
                   <button
                     className="rounded-full px-4 py-2 text-white bg-black cursor-pointer"
                     type="button"
-                    onClick={handleBuyNowClick}
+                    onClick={() => handleBuyNowClick(slide.paymentLink)}
                   >
                     Buy Now
                   </button>
